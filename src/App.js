@@ -1,5 +1,5 @@
 // import React from "react";
-
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 function App() {
@@ -30,18 +30,16 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = expense => {
+    console.log(expense);
+  };
+
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
-  // return React.createElement(
-  //   "div",
-  //   {},
-  //   React.createElement("h2", {}, "Let's get started!"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
 }
 
 export default App;
